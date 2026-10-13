@@ -1,0 +1,46 @@
+{
+  "name": "copydesk-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "vitest run",
+    "postinstall": "node scripts/prisma-generate.mjs",
+    "db:generate": "node scripts/prisma-generate.mjs",
+    "db:migrate": "prisma db push",
+    "db:prepare": "tsx scripts/prepare-prod.ts",
+    "db:demo": "DATABASE_URL=file:./demo.db prisma db push && DATABASE_URL=file:./demo.db tsx prisma/seed.ts && node -e \"const fs=require('fs'); const p='prisma/demo.db'; if(!fs.existsSync(p)||!fs.statSync(p).size) throw new Error('demo.db missing after seed'); console.log('demo.db', fs.statSync(p).size, 'bytes')\"",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:reset": "prisma db push --force-reset && tsx prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^2.0.1",
+    "prisma": "^6.6.0",
+    "tsx": "^4.19.3",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.14.1",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.1.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  }
+}

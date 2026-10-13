@@ -1,0 +1,6 @@
+https://copydesk-eta.vercel.app
+
+Review locally if a live action fails. Vercel Hobby copies SQLite to /tmp per isolate, so state is not shared across instances.
+Sign in: alex@ajaia.dev / demo1234
+Also: blair@ajaia.dev / demo1234
+Casey (no access): casey@ajaia.dev / demo1234

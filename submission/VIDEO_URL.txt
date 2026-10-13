@@ -1,0 +1,9 @@
+https://drive.google.com/file/d/1SmUzrrzqnb08NLprduN_a6CGyVZiX_vl/view?usp=drive_link
+
+Upload this file as an unlisted YouTube, Loom, or public Drive link:
+
+  submission/Copydesk-walkthrough.mp4
+
+Duration: 2:58
+Recorded against http://localhost:5173 (not the live Vercel app)
+Captions are on-screen; there is no voiceover.

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "@prisma/client": ["../../node_modules/.prisma/client"]
+    }
+  },
+  "include": ["./seed.ts", "../src/db.ts", "../src/loadEnv.ts", "../src/lib/**/*.ts"]
+}
